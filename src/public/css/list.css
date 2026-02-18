@@ -1,0 +1,165 @@
+.all-contents {
+    display: flex;
+    background-color: rgb(245, 245, 245);
+    height: 95vh;
+}
+
+.left-contents {
+    margin-left: 50px;
+    width: 300px;
+}
+
+.keyword {
+    width: 240px;
+    height: 40px;
+    border-radius: 20px;
+    border-width: thin;
+}
+
+.submit-button {
+    display: block;
+    border: none;
+    background-color: rgb(255, 200, 0);
+    border-radius: 5px;
+    width: 240px;
+    height: 40px;
+    margin-top: 20px;
+    box-shadow: 4px 4px rgb(224, 224, 224);
+}
+
+.select-label {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 25px;
+}
+
+.select {
+    display: block;
+    width: 240px;
+    height: 40px;
+    margin-top: 20px;
+}
+
+.sort_contents {
+    display: flex;
+    width: 150px;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 20px;
+    border: rgb(255, 200, 0) solid;
+}
+
+.searched_data {
+    margin-left: 10px;
+    margin-top: 7px;
+}
+
+.close-content {
+    width: 20px;
+    height: 20px;
+}
+
+.img-close-icon {
+    margin-left: 10px;
+    margin-top: 8px;
+    width: 20px;
+    height: 20px;
+}
+
+.add-button {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    background-color: rgb(255, 145, 0);
+    height: 40px;
+    width: 120px;
+    text-align: center;
+    border-radius: 5px;
+    padding-top: 7px;
+    margin-left: 700px;
+    box-shadow: 4px 4px rgb(224, 224, 224);
+}
+
+.right-contents {
+    margin-top: 30px;
+}
+
+.product-contents {
+    display: flex;
+    flex-wrap: wrap;
+    width: 900px;
+}
+
+.product-content {
+    margin: 3px;
+    width: 270px;
+    box-shadow: 4px 4px rgb(224, 224, 224);
+    position: relative;
+}
+
+.product-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.img-content {
+    width: 270px;
+    height: 160px;
+}
+
+.detail-content {
+    display: flex;
+    background-color: white;
+    height: 45px;
+    position: relative;
+}
+
+.price-content {
+    display: inline-block;
+    position: absolute;
+    right: 20px
+}
+
+.pagination-content {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination {
+    display: flex;
+    margin-left: -90px;
+}
+
+.page-item-active {
+    width: 40px;
+    height: 40px;
+    border-radius: 25px;
+    background-color: rgb(255, 200, 0);
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 7px;
+}
+
+.page-item {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 7px;
+}
+
+.page-link {
+    text-decoration: none;
+    color: black;
+}
+
+.page-link-active {
+    color: white;
+}
