@@ -1,0 +1,333 @@
+ /* 1. 【ヘッダー】商品一覧を左上、ボタンを右端にする設定 */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+     /* これで左右の端っこに別れます */
+    align-items: center;
+     /* 上下の高さを中央で揃える */
+    max-width: 1200px;
+    margin: 20px;
+    padding: 20px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+ /* 2. 【メイン】左右2分割（左に検索、右に商品カード） */
+.main-container {
+    display: flex;
+     /* これで中身（左サイドバーと右メイン）が「横並び」になります */
+    gap: 30px;
+     /* 左の検索欄と、右の商品カードの間のすき間 */
+    max-width: 1200px;
+     /* 画面が大きくなりすぎないように制限 */
+    margin: 0 auto;
+     /* 画面の真ん中に寄せる */
+    padding: 20px;
+}
+
+ /* 左側サイドバー（検索欄）の横幅を固定する */
+.sidebar {
+    width: 250px;
+     /* 横幅を250px（少し細め）に固定 */
+    flex-shrink: 0;
+     /* 画面が狭くなっても、この250pxは絶対に維持する */
+}
+
+ /* 右側メインエリア（商品カードたちが入る大きな領域） */
+.main-content {
+    flex-grow: 1;
+     /* 画面の横幅の残りのスペースをすべて使う */
+}
+
+ /* 3. 【検索欄】上から順に縦一列にきれいに並べる設定 */
+.search-form,
+.search-box {
+    display: flex;
+    flex-direction: column;
+     /* 中身を上から下へ縦並びにする */
+    gap: 15px;
+     /* パーツごとの上下のすき間 */
+}
+
+.search-box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+ /* 4. 商品カードを「横3枚」にする設定 */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+     /* 均等に3列にする */
+    gap: 20px;
+     /* カードとカードの上下左右のすき間 */
+    margin-bottom: 40px;
+     /* 下のページネーションとの間のすき間 */
+}
+
+.product-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+}
+
+.product-image-box img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+ /* 5. モーダルのポップアップ設定 */
+.sort-modal {
+    border: none;
+    border-radius: 8px;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+}
+
+.sort-model::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+     /* 背景をうっすら暗くする */
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 15px
+}
+
+/* カードのリンクの文字色を黒にし、下線を消す設定 */
+.product-card-link {/* ⭕️ クラス名（名札）をピンポイントで指名する場合 */
+    text-decoration: none;/* ➔ お節介な「下線」を綺麗に消しなさい！ */
+    color: inherit;/* ➔ 文字色を青にせず、元の黒色のままにしなさい！ */
+    display: block;
+}
+
+/* マウスを乗せたときに、少しカードを浮き上がらせるプロっぽい演出 */
+.product-card-link:hover .product-card {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+/* 〜〜 前から書いてあるコードたちが上に並んでいます 〜〜 */
+
+/* マウスを乗せたときに、少しカードを浮き上がらせるプロっぽい演出 */
+.product-card-link:hover .product-card {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+
+/* ==========================================
+
+
+
+/*詳細画面のスタイル*/
+/* --- 上下・左右分割の新型詳細ページレイアウト --- */
+.detail-wrapper {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* 【上半分】左右に綺麗に分けるための設定 */
+.detail-top-section {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #f0f0f0;
+    /* 上半分と下半分の区切り線 */
+}
+
+/* 左側（画像とボタン） */
+.detail-left-box {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.detail-image-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.file-input-box input[type="file"] {
+    font-size: 14px;
+    width: 100%;
+}
+
+/* 右側（名前・価格・季節） */
+.detail-right-box {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.detail-name {
+    margin: 0;
+    font-size: 26px;
+    color: #333;
+}
+
+.detail-price {
+    font-size: 16px;
+    color: #666;
+}
+
+.detail-price span {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ff5722;
+}
+
+.detail-season-box label {
+    margin-right: 12px;
+    cursor: pointer;
+}
+
+/* 見出しの共通文字デザイン */
+.section-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+/* 【下半分】商品説明 */
+.detail-bottom-section {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.description-text {
+    line-height: 1.7;
+    color: #555;
+    background-color: #fafafa;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+/* ボタンたちの横一列の配置 */
+.detail-footer-actions {
+    display: flex;
+    align-items: center;
+    /* 高さを揃える */
+    gap: 15px;
+}
+
+/* 戻るボタン */
+.back-btn {
+    padding: 12px 24px;
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    width: 80px;
+    text-align: center;
+}
+
+.back-btn:hover {
+    background-color: #e0e0e0;
+}
+
+/* 変更を保存ボタン */
+.save-btn {
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    flex-grow: 1;
+    /* 保存ボタンを真ん中で広く広げる */
+}
+
+.save-btn:hover {
+    background-color: #0056b3;
+}
+
+/* 右端に感覚を開けて置くゴミ箱ボタン */
+.trash-btn {
+    padding: 10px 15px;
+    background-color: #fff;
+    border: 1px solid #ff4d4f;
+    border-radius: 6px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 20px;
+    /* 保存ボタンとの間に少し広めの感覚（余白）をあける */
+    transition: 0.2s;
+}
+
+.trash-btn:hover {
+    background-color: #fff1f0;
+}
+/* 各入力項目ごとの上下のまとまり */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* 現在の文字を表示する部分の微調整 */
+.current-text {
+    margin: 0 0 5px 0;
+    color: #333;
+    font-size: 16px;
+}
+
+/* 文字や値段を入力する四角い箱（input）のデザイン */
+.detail-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    /* 箱の幅がはみ出さないようにする設定 */
+}
+
+/* 商品説明を入力する大きな箱（textarea）のデザイン */
+.detail-textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+    /* 文字のフォントを周りと合わせる */
+    resize: vertical;
+    /* ユーザーが上下にだけサイズを広げられるようにする */
+    box-sizing: border-box;
+}
+
+/* 入力欄にマウスがカチッと当たったときの光る演出（お好みで） */
+.detail-input:focus,
+.detail-textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+    }
